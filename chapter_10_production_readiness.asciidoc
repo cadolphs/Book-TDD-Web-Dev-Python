@@ -796,8 +796,8 @@ Dockerfile should gain some lines a bit like this:
 ====
 [source,dockerfile]
 ----
-RUN addgroup --system nonroot && adduser --system --group nonroot
-
+RUN addgroup --system nonroot && adduser --system --ingroup nonroot
+RUN chown -R nonroot:nonroot /src
 USER nonroot
 ----
 ====
